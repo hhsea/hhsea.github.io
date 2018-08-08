@@ -229,6 +229,543 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://linhai.tk/2018/08/08/Yarn的自定义配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="海海">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海海的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/08/Yarn的自定义配置/" itemprop="url">Yarn的升级与自定义路径配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T20:27:36+08:00">
+                2018-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="yarn-的安装"><a href="#yarn-的安装" class="headerlink" title="yarn 的安装"></a>yarn 的安装</h2><p>使用 <code>npm</code> 安装 <code>yarn</code>：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yarn</span><br></pre></td></tr></table></figure></p>
+<p>如果 <code>npm</code> 使用的是默认设置，则不需要配置，可直接使用 <code>yarn</code>，如果更改过 <code>npm</code> 的目录，则需要在环境变量中指定 <code>yarn</code> 的安装目录：</p>
+<ul>
+<li>新建系统变量： <code>yarn_bin</code>，变量值为： <code>D:\develop\nodejs\npm-global\bin</code>。</li>
+<li>将 <code>yarn_bin</code> 加入 <code>path</code>的变量值中。</li>
+</ul>
+<h2 id="yarn-的更新"><a href="#yarn-的更新" class="headerlink" title="yarn 的更新"></a>yarn 的更新</h2><p>用 <code>npm</code> 更新 <code>yarn</code> 版本：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global yarn</span><br></pre></td></tr></table></figure></p>
+<h2 id="yarn-的自定义路径配置"><a href="#yarn-的自定义路径配置" class="headerlink" title="yarn 的自定义路径配置"></a>yarn 的自定义路径配置</h2><ul>
+<li><p>查看 <code>yarn</code> 的全局执行路径：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn global bin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <code>yarn</code> 的全局执行路径：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config <span class="built_in">set</span> prefix d:\nodejs\.yarn</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <code>yarn</code> 的全局脚本安装路径：</p>
+<ul>
+<li><p>第一步：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config <span class="built_in">set</span> global-folder d:\nodejs\.yarn\global</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二步：<br><br>找到用户目录下的 <code>.yarnrc</code> 文件，将找到文字 <code>global-folder</code> 修改为 <code>--global-folder</code> </p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>关键点： 改为全局后，所有插件无法执行了,需要修改环境变量<br>在path变量中添加之前修改好的路径。如： <code>d:\nodejs\.yarn\bin</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://linhai.tk/2018/05/20/ES6与ES5的一些对比/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="海海">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海海的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/20/ES6与ES5的一些对比/" itemprop="url">ES6与ES5的一些对比</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T07:27:36+08:00">
+                2018-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><blockquote>
+<ul>
+<li>1、如果箭头函数中只有一行，且是个返回值，则可不加{}，如果加了{}，则需要手动return来返回<ul>
+<li>2、箭头函数不存在this,在箭头函数内调用this，返回的是父级对象，所以可以用function包住箭头函数,这样this的就会指向function了</li>
+</ul>
+</li>
+<li>3、箭头函数不能当作构造函数</li>
+<li>4、不存在arguments对象，如果一定要使用不定参数，可以用Rest代替,截此到目前，IE11仍不支持<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6写法</span></span><br><span class="line">()=&gt;<span class="string">"123"</span><span class="comment">//自动return</span></span><br><span class="line">()=&gt;&#123;<span class="keyword">return</span> <span class="string">"123"</span>&#125;<span class="comment">//手动return</span></span><br><span class="line"><span class="comment">//ES5等效写法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"123"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>带参数的函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//带一个参数</span></span><br><span class="line"><span class="comment">//ES6写法</span></span><br><span class="line">str=&gt;<span class="string">"hello "</span>+str</span><br><span class="line"><span class="comment">//ES5等效写法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello "</span>+str</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//ES6写法</span></span><br><span class="line"><span class="comment">//带两个以上参数</span></span><br><span class="line">(a,b)=&gt;a+b</span><br><span class="line"><span class="comment">//ES5等效写法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">///带默认参数的函数</span></span><br><span class="line"><span class="comment">//ES6写法</span></span><br><span class="line">(a,b=<span class="number">6</span>)=&gt;&#123;a+b&#125;</span><br><span class="line"><span class="comment">//ES5等效写法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">arguments</span>[<span class="number">1</span>] !== (<span class="keyword">void</span> <span class="number">0</span>) ? <span class="built_in">arguments</span>[<span class="number">1</span>] : <span class="number">6</span>;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://linhai.tk/2018/05/17/npm与Yarn的安装与使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="海海">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海海的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/17/npm与Yarn的安装与使用/" itemprop="url">nodejs,npm与Yarn的安装与配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T21:27:36+08:00">
+                2018-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="nodejs的安装"><a href="#nodejs的安装" class="headerlink" title="nodejs的安装"></a>nodejs的安装</h2><p>nodejs的下载地址：<br><a href="https://nodejs.org/en/download/current/" target="_blank" rel="noopener">https://nodejs.org/en/download/current/</a><br>可选择不同操作系统、不同版本的安装包或绿色压缩包。<br>安装包只是用默认值设置了环境变量的配置，后期自定义比较麻烦，所以在这里我选择绿色版。</p>
+<ul>
+<li>我的操作系统是 <code>win10x64</code> 专业版，在这里我选择64位，zip压缩包，解压缩包到你指定的位置，如 <code>d:\develop\nodejs</code> ，</li>
+<li>设置系统环境变量:<ul>
+<li>新建系统变量：变量名 <code>nodejs_home</code>，变量值为刚才指定的位置（如： <code>d:\develop\nodejs</code>）。</li>
+<li>将刚才新建的 <code>nodejs_home</code> 变量加入 <code>path</code> 变量中。</li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/17/npm与Yarn的安装与使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://linhai.tk/2018/05/16/React16+WebPack4简单入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="海海">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海海的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/16/React16+WebPack4简单入门/" itemprop="url">React16+WebPack4简单入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T17:17:36+08:00">
+                2018-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="从零开始配置"><a href="#从零开始配置" class="headerlink" title="从零开始配置"></a>从零开始配置</h2><p>初始化配置，执行命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn init</span><br><span class="line"><span class="comment">#yarn init -y 此条可以快速生成package.json，所有选项使用默认值</span></span><br></pre></td></tr></table></figure></p>
+<p>将Webpack添加到Package.json中的devDependencies节点中：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add webpack -D</span><br></pre></td></tr></table></figure></p>
+<p>因为webpack4与webpack-cli是分开的，所以需要单独添加webpack-cli：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add webpack-cli -D</span><br></pre></td></tr></table></figure></p>
+<p>添加完成后，创建目录src，并在目录中创建文件index.js，然后添加如下内容（webpack4无配置时默认的入口为src下的index.js）：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">"Hello hhsea!"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>保存后，执行命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node_modules\.bin\webpack --mode=development</span><br><span class="line"><span class="comment">#如果是webpack4是全局安装的，可以直接执行webpack --mode=development</span></span><br></pre></td></tr></table></figure></p>
+<p>执行成功后项目根目录会生成dist目录，目录中会生成main.js文件。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/16/React16+WebPack4简单入门/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://linhai.tk/2018/05/11/PS圆环扇形学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -637,7 +1174,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -650,7 +1187,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
