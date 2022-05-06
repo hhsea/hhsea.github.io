@@ -264,27 +264,6 @@
       </tags>
   </entry>
   <entry>
-    <title>macos安装python3相关</title>
-    <url>/2022/04/22/macos%E5%AE%89%E8%A3%85python3%E7%9B%B8%E5%85%B3/</url>
-    <content><![CDATA[<h1 id="macos安装python3相关"><a href="#macos安装python3相关" class="headerlink" title="macos安装python3相关"></a>macos安装python3相关</h1><h2 id="安装python3后pip3无法正常运行"><a href="#安装python3后pip3无法正常运行" class="headerlink" title="安装python3后pip3无法正常运行"></a>安装python3后pip3无法正常运行</h2><ul>
-<li>下载get-pip.py<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py</span><br></pre></td></tr></table></figure></li>
-<li>使用python执行下载的get-pip.py<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo python3 get-pip.py</span><br></pre></td></tr></table></figure>
-<strong>安装完后如果系统中有别的版本的pip映射如pip2，会覆盖为pip3</strong><span id="more"></span>
-3.执行<code>pip3 -v</code>验证是否能正常输出版本号<br>4.卸载pip3<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo pip3 uninstall pip</span><br></pre></td></tr></table></figure>
-<strong>不指定pip版本的话，会根据系统中的映射删除对应的pip</strong><br>5.升级pip<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip3 install -upgrade pip</span><br></pre></td></tr></table></figure>
-6.修改pip映射<br>把pip改为pip2<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /usr/local/bin/pip</span><br></pre></td></tr></table></figure>
-把第一行改为：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/System/Library/Frameworks/Python.framework/Versions/2.7/Resoures/Python.app/Contents/MacOS/Python</span><br></pre></td></tr></table></figure>
-pip改为pip3<br>把第一行改为：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/usr/local/opt/python/bin/python3.7</span><br></pre></td></tr></table></figure>
-<strong>注：根据安装的位置修改</strong></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>macos</tag>
-        <tag>python3</tag>
-        <tag>pip3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>nodejs,npm与Yarn的安装与配置</title>
     <url>/2018/05/17/npm%E4%B8%8EYarn%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="nodejs的安装"><a href="#nodejs的安装" class="headerlink" title="nodejs的安装"></a>nodejs的安装</h2><p>nodejs的下载地址：<br><a href="https://nodejs.org/en/download/current/">https://nodejs.org/en/download/current/</a><br>可选择不同操作系统、不同版本的安装包或绿色压缩包。<br>安装包只是用默认值设置了环境变量的配置，后期自定义比较麻烦，所以在这里我选择绿色版。</p>
@@ -357,6 +336,27 @@ pip改为pip3<br>把第一行改为：<figure class="highlight plaintext"><table
         <tag>yarn</tag>
         <tag>nodejs</tag>
         <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macos安装python3相关</title>
+    <url>/2022/04/22/macos%E5%AE%89%E8%A3%85python3%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<h1 id="macos安装python3相关"><a href="#macos安装python3相关" class="headerlink" title="macos安装python3相关"></a>macos安装python3相关</h1><h2 id="安装python3后pip3无法正常运行"><a href="#安装python3后pip3无法正常运行" class="headerlink" title="安装python3后pip3无法正常运行"></a>安装python3后pip3无法正常运行</h2><ul>
+<li>下载get-pip.py<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py</span><br></pre></td></tr></table></figure></li>
+<li>使用python执行下载的get-pip.py<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo python3 get-pip.py</span><br></pre></td></tr></table></figure>
+<strong>安装完后如果系统中有别的版本的pip映射如pip2，会覆盖为pip3</strong><span id="more"></span>
+3.执行<code>pip3 -v</code>验证是否能正常输出版本号<br>4.卸载pip3<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo pip3 uninstall pip</span><br></pre></td></tr></table></figure>
+<strong>不指定pip版本的话，会根据系统中的映射删除对应的pip</strong><br>5.升级pip<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip3 install -upgrade pip</span><br></pre></td></tr></table></figure>
+6.修改pip映射<br>把pip改为pip2<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /usr/local/bin/pip</span><br></pre></td></tr></table></figure>
+把第一行改为：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/System/Library/Frameworks/Python.framework/Versions/2.7/Resoures/Python.app/Contents/MacOS/Python</span><br></pre></td></tr></table></figure>
+pip改为pip3<br>把第一行改为：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/usr/local/opt/python/bin/python3.7</span><br></pre></td></tr></table></figure>
+<strong>注：根据安装的位置修改</strong></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>macos</tag>
+        <tag>python3</tag>
+        <tag>pip3</tag>
       </tags>
   </entry>
 </search>
