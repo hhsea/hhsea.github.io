@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>ES6与ES5的一些对比</title>
+    <url>/2018/05/20/ES6%E4%B8%8EES5%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AF%B9%E6%AF%94/</url>
+    <content><![CDATA[<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><blockquote>
+<ul>
+<li>1、如果箭头函数中只有一行，且是个返回值，则可不加{}，如果加了{}，则需要手动return来返回</li>
+<li>2、箭头函数不存在this,在箭头函数内调用this，返回的是父级对象，所以可以用function包住箭头函数,这样this的就会指向function了</li>
+<li>3、箭头函数不能当作构造函数</li>
+<li>4、不存在arguments对象，如果一定要使用不定参数，可以用Rest代替,截此到目前，IE11仍不支持</li>
+</ul>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//ES6写法</span></span><br><span class="line">()=&gt;<span class="string">&quot;123&quot;</span><span class="comment">//自动return</span></span><br><span class="line">()=&gt;&#123;<span class="keyword">return</span> <span class="string">&quot;123&quot;</span>&#125;<span class="comment">//手动return</span></span><br><span class="line"><span class="comment">//ES5等效写法</span></span><br><span class="line"><span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;123&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>带参数的函数</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//带一个参数</span></span><br><span class="line"><span class="comment">//ES6写法</span></span><br><span class="line">str=&gt;<span class="string">&quot;hello &quot;</span>+str</span><br><span class="line"><span class="comment">//ES5等效写法</span></span><br><span class="line"><span class="keyword">function</span>(<span class="params">str</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;hello &quot;</span>+str</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//ES6写法</span></span><br><span class="line"><span class="comment">//带两个以上参数</span></span><br><span class="line">(a,b)=&gt;a+b</span><br><span class="line"><span class="comment">//ES5等效写法</span></span><br><span class="line"><span class="keyword">function</span>(<span class="params">a,b</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">///带默认参数的函数</span></span><br><span class="line"><span class="comment">//ES6写法</span></span><br><span class="line">(a,b=<span class="number">6</span>)=&gt;&#123;a+b&#125;</span><br><span class="line"><span class="comment">//ES5等效写法</span></span><br><span class="line"><span class="keyword">function</span>(<span class="params">a</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="variable language_">arguments</span>[<span class="number">1</span>] !== (<span class="keyword">void</span> <span class="number">0</span>) ? <span class="variable language_">arguments</span>[<span class="number">1</span>] : <span class="number">6</span>;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>ES6</tag>
+        <tag>ES5</tag>
+        <tag>javascript</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo的主要命令</title>
+    <url>/2018/05/09/Hexo%E7%9A%84%E4%B8%BB%E8%A6%81%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="Hexo主要命令"><a href="#Hexo主要命令" class="headerlink" title="Hexo主要命令"></a>Hexo主要命令</h2><p><strong>1、</strong> 清除生成的文件（清除缓存）:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<p><strong>2、</strong> 启动本地服务（预览）：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p><strong>3、</strong> 生成静态网页：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<p>生成的文件会放在 <code>public</code> 目录中，如果目录不存在，则会自动创建</p>
+<span id="more"></span>
+<p><strong>4、</strong> 创建文章</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章名称&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>5、</strong> 创建分类页面（创建Tag标签页同理）</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;categories&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PS圆环扇形学习笔记</title>
+    <url>/2018/05/11/PS%E5%9C%86%E7%8E%AF%E6%89%87%E5%BD%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>1、新建文件，尺寸为800*800（只要是正方形都行）；<br>2、前景色设置为黑色，并按Alt+Del填充黑色；<br>3、分别从水平标尺与垂直标尺上拉出参考线，放在图层中心；<br>4、选择椭圆工具，在顶部属性条中设置填充为白色，描边为无颜色；<br>5、从水平参考线与垂直参考线中心按住Alt+Shift用鼠标拉出一个正圆型（正常情况下会出现一个黑底白圆）；<br>6、选中刚才画出的圆的图层，设置顶部属性条中“路径操作”为“减去顶层形状”；<br>7、按住Shift+Alt再拉出一个圆，圆的大小比上一个圆小一些，后期这个白色的空间用于放置照片（正常情况下会出现一个白色的圆环）；<br>8、点击图层列表面板的空白处，再次重复步骤5，拉出一个正圆，圆的大小比步骤7拉出的圆一些就好，后期当作圆环之间的间隔；<br>9、重复5-8步骤，画出四个圆环和一个圆心，视情况不需要步骤6；</p>
+<span id="more"></span>
+<p>10、选择柜形工具，在顶层的属性面板中设置颜色为红色，宽度为画布宽度，高度为30象素（高度值可以随便，主要后期用于把圆环分隔成不同的块时，设置间距用）；<br>11、点击图像区域，弹出创建矩形对话框，勾选“从中心”，确定，重使命图层为0d；<br>12、选择矩形图层，Ctrl+J复制图层，Ctrl+T自由变换路径，顶部设置为90度，重命名图层为90d；<br>13、如果矩形不在中心点，手动调整到中心点；<br>14、选择两个矩形图层，Ctrl+G创建图层组，重命名为4f表示将圆分为4份；<br>15、Ctrl+J复制3次0d图层，分别调整角度为60度，120度，Ctrl+G，创建图层组，并重命名为6f，表示将圆分为6份；<br>16、重复步骤15，创建8f（角度为45）与10f（角度为36）的矩形图组；<br>17、选择所有矩形组，旋转-30度；<br>18、复制组，并分别Ctrl+E将复制的组合并为单独的图层；<br>19、选中最大的圆环图层，右键选择“栅格化图层”,按住Ctrl并点击该图层缩略图载入选区；<br>20、按住Ctrl+Alt选择最多的一个分割线图层缩略图，选中该圆环图层，按Ctrl+J复制（复制出来的就是分隔好的扇形块了）；<br>21、重复19-20步骤，分别其它3个圆环的扇形处理好；<br>22、隐藏多余的图层，只留下背景图层与扇形图层；<br>23、将要放置的图片拖入PS（可以设置一下不透明度，这样好调整），调整好位置与大小后，按住Ctrl并点击要放置照片的扇形的图层缩略图，然后使用“多边形套索工具”按住Alt键，将多余选区去除；<br>24、点击照片图层，创建图层蒙版，照片显示在扇形区域内了（如果照片尺寸或位置不合适，可以将照片与蒙板间的锁链图标点掉，再选中照片图层，单独可以调整照片）；<br>25、按照23，24步骤添加完其它的扇形区域，圆环扇形就完成了。</p>
+]]></content>
+      <tags>
+        <tag>PS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PS磨皮学习笔记</title>
+    <url>/2018/05/08/PS%E7%A3%A8%E7%9A%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="快速磨皮大法"><a href="#快速磨皮大法" class="headerlink" title="快速磨皮大法"></a>快速磨皮大法</h2><p>1、Ctrl+J 复制图层，备份。<br>2、滤镜 - 模糊 - 高斯模糊。<br>3、图层蒙版：黑色遮档、白色显示。<br>按住Alt键创建图层蒙版（白色画笔擦出皮肤，降低不透明度）。</p>
+<span id="more"></span>
+<h2 id="通道磨皮大法"><a href="#通道磨皮大法" class="headerlink" title="通道磨皮大法"></a>通道磨皮大法</h2><p>1、Ctrl+J 复制图层，备份。<br>2、复制 “蓝” 通道。<br>3、滤镜 - 其它 - 高反差保留<br>4、图像 - 计算 -（混合模式：叠加），多次。<br>5、载入选区：按住Ctrl键点击Alpha3通道缩略图。<br>6、Ctrl+Shift+I 反选。<br>7、回到RGB主通道，创建 “曲线” 调整层，调高亮度。<br>8、Ctrl+Shift+Alt+E 盖印图层，污点修复画笔工具<br>9、对比图：新建文件，原图、新图的JPG格式放到这个文件中。</p>
+]]></content>
+      <tags>
+        <tag>PS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>React16+WebPack4简单入门</title>
+    <url>/2018/05/16/React16+WebPack4%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h2 id="从零开始配置"><a href="#从零开始配置" class="headerlink" title="从零开始配置"></a>从零开始配置</h2><p>初始化配置，执行命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn init</span><br><span class="line"><span class="comment">#yarn init -y 此条可以快速生成package.json，所有选项使用默认值</span></span><br></pre></td></tr></table></figure>
+<p>将Webpack添加到Package.json中的devDependencies节点中：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add webpack -D</span><br></pre></td></tr></table></figure>
+<p>因为webpack4与webpack-cli是分开的，所以需要单独添加webpack-cli：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add webpack-cli -D</span><br></pre></td></tr></table></figure>
+<p>添加完成后，创建目录src，并在目录中创建文件index.js，然后添加如下内容（webpack4无配置时默认的入口为src下的index.js）：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&quot;Hello hhsea!&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>保存后，执行命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node_modules\.bin\webpack --mode=development</span><br><span class="line"><span class="comment">#如果是webpack4是全局安装的，可以直接执行webpack --mode=development</span></span><br></pre></td></tr></table></figure>
+<p>执行成功后项目根目录会生成dist目录，目录中会生成main.js文件。</p>
+<span id="more"></span>
+<blockquote>
+<p>mode参数说明（不设置会输出<code>Warning</code>），为webpack4新增的参数选项，不设置时，默认为 <code>production</code>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>development</code></td>
+<td align="left">会将 <code>process.env.NODE_ENV</code> 的值设为 <code>development</code>。启用 <code>NamedChunksPlugin</code> 和 <code>NamedModulesPlugin</code> 。</td>
+</tr>
+<tr>
+<td align="left"><code>production</code></td>
+<td align="left">会将 <code>process.env.NODE_ENV</code> 的值设为 <code>production</code>。启用 <code>FlagDependencyUsagePlugin</code> ， <code>FlagIncludedChunksPlugin</code> ， <code>ModuleConcatenationPlugin</code> ， <code>NoEmitOnErrorsPlugin</code> , <code>OccurrenceOrderPlugin</code> , <code>SideEffectsFlagPlugin</code> 和 <code>UglifyJsPlugin</code> 。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>更详细配置请<a href="https://webpack.js.org/concepts/mode">点此</a>查看官方文档：<a href="https://webpack.js.org/concepts/mode/">https://webpack.js.org/concepts/mode/</a><br>或<a href="https://webpack.docschina.org/concepts/mode/">点此</a>查看中文文档：<a href="https://webpack.docschina.org/concepts/mode/">https://webpack.docschina.org/concepts/mode/</a></p>
+</blockquote>
+<p>然后创建 <code>dist/index.html</code> 并引入 <code>main.js</code> ：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>webpack4Demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;./main.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后保存，并用浏览器打开查看内容是否显示出 <code>Hello hhsea!</code> 。</p>
+<p>在 <code>src</code> 目录创建一个新 <code>js</code> 文件：<code>module.js</code> （文件名可以自定义，只要是 <code>js</code> 文件就行），文件内容：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="string">&quot;&lt;br /&gt;this is Module Content!&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>修改 <code>src/index.js</code> 文件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">`Hello hhsea!<span class="subst">$&#123;<span class="built_in">require</span>(<span class="string">&#x27;./module.js&#x27;</span>)&#125;</span>`</span>);</span><br></pre></td></tr></table></figure>
+<p>保存后，再次执行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node_modules\.bin\webpack --mode=development</span><br></pre></td></tr></table></figure>
+<p>成功后，用浏览器重新打开 <code>index.html</code> 查看内容是否正确（执行完后， <code>dist/index.html</code> 可能会不见，可以重新复制上面的代码重新创建一个），显示结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello hhsea!</span><br><span class="line">this is Module Content！</span><br></pre></td></tr></table></figure>
+<h2 id="webpack-热更新"><a href="#webpack-热更新" class="headerlink" title="webpack 热更新"></a>webpack 热更新</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add webpack-dev-server -D</span><br></pre></td></tr></table></figure>
+<p>打开 <code>package.json</code> 文件在 添加以下配置（如果已经存在 <code>scripts</code> 节点，修改就可以了）：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;dev&quot;</span>: <span class="string">&quot;node_modules/.bin/webpack-dev-server --mode=development&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>保存后，可以在命令行执行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn dev</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>默认端口为8080，要修改为访问也可以修改scripts的配置：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;dev&quot;</span>: <span class="string">&quot;node_modules/.bin/webpack-dev-server --mode=development&quot;</span> --host <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span> --port <span class="number">9999</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>--host 0.0.0.0</code> 表示让开放给能访问到本机的外部设备<br /><br><code>--port 9999</code> 表示访问端口为9999<br /><br>其它参数，请访问官方文档查看：<a href="https://webpack.js.org/configuration/dev-server/">https://webpack.js.org/configuration/dev-server/sss</a></p>
+</blockquote>
+<h2 id="WebPack主要插件（相关插件都可以在官方文档中找到说明）"><a href="#WebPack主要插件（相关插件都可以在官方文档中找到说明）" class="headerlink" title="WebPack主要插件（相关插件都可以在官方文档中找到说明）"></a>WebPack主要插件（相关插件都可以在官方文档中找到说明）</h2><p>插件配置需要放在 <code>webpack.config.js</code> 中，需要在项目根目录中新建一个，基本内容为：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);<span class="comment">//加载路径解析插件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> webpackConfig = &#123;</span><br><span class="line">  <span class="attr">entry</span>: <span class="string">&#x27;./src/index.js&#x27;</span>,<span class="comment">//指定源入口文件的地址</span></span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">path</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;./dist&#x27;</span>),<span class="comment">//将输出目录的相对路径转为绝对路径</span></span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&#x27;index.js&#x27;</span><span class="comment">//指定入口js的文件名</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = webpackConfig;<span class="comment">//设置配置属性</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="html-webpack-plugin"><a href="#html-webpack-plugin" class="headerlink" title="html-webpack-plugin"></a><code>html-webpack-plugin</code></h3><ul>
+<li>安装：<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add html-webpack-plugin -D</span><br></pre></td></tr></table></figure></li>
+<li>配置：  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> htmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&quot;html-webpack-plugin&quot;</span>);<span class="comment">///&lt;&lt;=====此行新增</span></span><br><span class="line"><span class="keyword">var</span> webpackConfig = &#123;</span><br><span class="line">    <span class="attr">entry</span>: <span class="string">&#x27;./src/index.js&#x27;</span>,</span><br><span class="line">    <span class="attr">output</span>: &#123;</span><br><span class="line">        <span class="attr">path</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;./dist&#x27;</span>),</span><br><span class="line">        <span class="attr">filename</span>: <span class="string">&#x27;index.js&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">plugins</span>: [<span class="keyword">new</span> <span class="title function_">htmlWebpackPlugin</span>()]<span class="comment">//&lt;&lt;====此行新增</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = webpackConfig;</span><br></pre></td></tr></table></figure>
+  保存后删除 <code>dist</code> 目录重新执行:  <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node_modules\.bin\webpack --mode=development</span><br></pre></td></tr></table></figure>
+  完成后， <code>dist</code> 目录中会自动生成一个引入了 <code>index.js</code> 的 <code>index.html</code> 文件</li>
+<li>自定义html模版配置：<br>  将 <code>webpack.config.js</code> 中的 <code>plugins</code> 节点中的 <code>new htmlWebpackPlugin()</code> 改为  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title function_">htmlWebpackPlugin</span>(&#123;</span><br><span class="line">    <span class="attr">template</span>: <span class="string">&quot;./src/app.html&quot;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+  然后在 <code>src</code> 目录中新建 <code>app.html</code> 文件，内容为：  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;ie=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>这是入口页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+  修改 <code>index.js</code> 文件：  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> app=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;app&quot;</span>);</span><br><span class="line">app.<span class="property">innerHTML</span>=(<span class="string">`Hello hhsea!!<span class="subst">$&#123;<span class="built_in">require</span>(<span class="string">&#x27;./module.js&#x27;</span>)&#125;</span>`</span>);</span><br></pre></td></tr></table></figure>
+  重新执行:  <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node_modules\.bin\webpack --mode=development</span><br></pre></td></tr></table></figure>
+  完成后， <code>dist</code> 目录中会基于指定的 <code>html</code> 文件模版自动生成一个引入了 <code>index.js</code> 的 <code>index.html</code> 文件</li>
+</ul>
+<h3 id="mini-css-extract-plugin与-css-loader"><a href="#mini-css-extract-plugin与-css-loader" class="headerlink" title="mini-css-extract-plugin与 css-loader"></a><code>mini-css-extract-plugin</code>与 <code>css-loader</code></h3><p>webpack版本在4之前推荐的是 <code>extract-text-webpack-plugin</code> ，不过从4版本起，<strong>作者推荐</strong>使用的是 <code>mini-css-extract-plugin</code></p>
+<ul>
+<li>安装：<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add mini-css-extract-plugin -D</span><br></pre></td></tr></table></figure></li>
+<li>配置：<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1、在顶部加载插件</span></span><br><span class="line"><span class="keyword">var</span> miniCssExtractPlugin = <span class="built_in">require</span>(<span class="string">&quot;mini-css-extract-plugin&quot;</span>);</span><br><span class="line"><span class="comment">//2、在module.rules加入</span></span><br><span class="line"><span class="attr">module</span>:&#123;</span><br><span class="line">    <span class="attr">rules</span>:[</span><br><span class="line">        <span class="comment">//在此加入下面的css配置</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</span><br><span class="line">            <span class="attr">use</span>: [</span><br><span class="line">                <span class="title class_">MiniCssExtractPlugin</span>.<span class="property">loader</span>,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="attr">loader</span>: <span class="string">&#x27;css-loader&#x27;</span>,</span><br><span class="line">                    <span class="attr">options</span>: &#123;</span><br><span class="line"></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在plugins节点中加入下面的配置</span></span><br><span class="line"><span class="keyword">new</span> <span class="title function_">miniCssExtractPlugin</span>(&#123;</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&quot;[name].[contenthash].css&quot;</span>,</span><br><span class="line">    <span class="attr">chunkFilename</span>: <span class="string">&quot;[id].[hash].css&quot;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+要使用 <code>mini-css-extract-plugin</code> 必须安装 <code>css-loader</code> 插件：<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add css-loader -D</span><br></pre></td></tr></table></figure>
+<h3 id="babel-loader"><a href="#babel-loader" class="headerlink" title="babel-loader"></a><code>babel-loader</code></h3><code>babel-loader</code> 功能是将 <code>ES6</code> 的代码转为 <code>ES5</code> 代码。</li>
+<li>安装：  <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add babel-loader babel-core babel-preset-env -D</span><br></pre></td></tr></table></figure></li>
+<li>配置：  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//以下代码加入module.rules节点的配置中：</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">test</span>: <span class="regexp">/\.js$/</span>,</span><br><span class="line">  <span class="attr">exclude</span>: <span class="regexp">/(node_modules|bower_components)/</span>,</span><br><span class="line">  <span class="attr">use</span>: &#123;</span><br><span class="line">    <span class="attr">loader</span>: <span class="string">&#x27;babel-loader&#x27;</span>,</span><br><span class="line">    <span class="attr">options</span>: &#123;</span><br><span class="line">      <span class="attr">presets</span>: [<span class="string">&#x27;env&#x27;</span>]</span><br><span class="line">      <span class="comment">//presets:[&quot;env&quot;,&quot;react&quot;]//如果开发react，需改成这样</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置-React16-相关模块"><a href="#配置-React16-相关模块" class="headerlink" title="配置 React16 相关模块"></a>配置 React16 相关模块</h2><h3 id="基础模块"><a href="#基础模块" class="headerlink" title="基础模块"></a>基础模块</h3>  安装 <code>react</code> , <code>react-dom</code>  <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add react react-dom</span><br></pre></td></tr></table></figure>
+  安装 <code>babel-preset-react</code>  <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add babel-preset-react -D</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>babel-preset-react</code> 用于将react代码转为普通的js。</p>
+</blockquote>
+</li>
+</ul>
+<p>  将 <code>src/index.js</code> 的内容改为：<br>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello hhsea!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>, <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#app&#x27;</span>));</span><br></pre></td></tr></table></figure><br>  保存后编译一下，看看生成的文件是否正确。</p>
+<h3 id="热更新模块"><a href="#热更新模块" class="headerlink" title="热更新模块"></a>热更新模块</h3><p>  安装：<br>  <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add react-hot-loader -D</span><br></pre></td></tr></table></figure><br>  配置：<br>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在module.rules的js处理配置节中，在使用 &quot;babel-loader&quot;的options配置节里加上下面的代码：</span></span><br><span class="line"><span class="attr">loader</span>:<span class="string">&quot;babel-loader&quot;</span>,</span><br><span class="line"><span class="attr">options</span>:&#123;</span><br><span class="line">    <span class="attr">presets</span>:[<span class="string">&quot;env&quot;</span>,<span class="string">&quot;react&quot;</span>],</span><br><span class="line">    <span class="attr">plugins</span>: [<span class="string">&#x27;react-hot-loader/babel&#x27;</span>]<span class="comment">//加入此条</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>  然后，在 <code>package.json</code> 配置中启动 <code>webpack-dev-server</code> 的参数中加入 <code>--hot</code>,例：<br>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;dev&quot;</span>: <span class="string">&quot;node_modules/.bin/webpack-dev-server --mode=development&quot;</span> --host <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span> --port <span class="number">9999</span> --hot</span><br></pre></td></tr></table></figure><br>  在 <code>src</code> 目录中新建文件： <code>header.js</code> 和 <code>app.js</code> 内容分别为<br>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//header.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="comment">//jsx的样式必须用&#123;&#123;&#125;&#125;方式写</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> () =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&#123;&#123;color:</span>&#x27;<span class="attr">red</span>&#x27;&#125;&#125;&gt;</span>header<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure><br>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; hot &#125; <span class="keyword">from</span> <span class="string">&#x27;react-hot-loader&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello hhsea!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">hot</span>(<span class="variable language_">module</span>)(<span class="title class_">App</span>);</span><br></pre></td></tr></table></figure><br>  修改 <code>./src/index.js</code> 文件为：<br>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>, <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#app&#x27;</span>));</span><br></pre></td></tr></table></figure><br>  重启服务，与浏览器页面，就塻块热更就可以正常工作了，可以直接在 <code>header.js</code> 或 <code>app.js</code> 里修改代码试验一下。</p>
+<h3 id="按需加载-React-组件"><a href="#按需加载-React-组件" class="headerlink" title="按需加载 React 组件"></a>按需加载 React 组件</h3>  <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add react-loadable -D</span><br></pre></td></tr></table></figure>
+<p>  修改 <code>webpack.config.js</code> 的配置：<br>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在module.rules的js处理配置节中，在使用 &quot;babel-loader&quot;的options配置节里找到代码：</span></span><br><span class="line"><span class="comment">//presets:[&quot;env&quot;,&quot;react&quot;]</span></span><br><span class="line"><span class="comment">//修改为：</span></span><br><span class="line"><span class="attr">presets</span>:[<span class="string">&quot;env&quot;</span>,<span class="string">&quot;react&quot;</span>,<span class="string">&quot;stage-2&quot;</span>],</span><br></pre></td></tr></table></figure><br>  修改 <code>App.js</code>，内容为：<br>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; hot &#125; <span class="keyword">from</span> <span class="string">&#x27;react-hot-loader&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Loadable</span> <span class="keyword">from</span> <span class="string">&#x27;react-loadable&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Loading</span> = (<span class="params"></span>) =&gt; <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>loding...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">delay</span> = (<span class="params">loader</span>) =&gt; <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="built_in">setTimeout</span>(resolve, <span class="number">2000</span>, loader));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Header</span> = <span class="title class_">Loadable</span>(&#123; <span class="attr">loader</span>: <span class="function">() =&gt;</span> <span class="title function_">delay</span>(<span class="title function_">import</span>(<span class="string">&#x27;./Header&#x27;</span>)), <span class="attr">loading</span>: <span class="title class_">Loading</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Header</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>这是页面内容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">hot</span>(<span class="variable language_">module</span>)(<span class="title class_">App</span>)</span><br></pre></td></tr></table></figure><br>  可以看到引入的Header组件在延时2秒后才出现，出现前显示出了 <code>loading...</code> 的文字。
+  </p>
+]]></content>
+      <tags>
+        <tag>React</tag>
+        <tag>WebPack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Yarn的升级与自定义路径配置</title>
+    <url>/2018/08/08/Yarn%E7%9A%84%E5%8D%87%E7%BA%A7%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B7%AF%E5%BE%84%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="yarn的安装"><a href="#yarn的安装" class="headerlink" title="yarn的安装"></a>yarn的安装</h2><p>使用<code>npm</code>安装<code>yarn</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g yarn</span><br></pre></td></tr></table></figure>
+<p>如果 <code>npm</code> 使用的是默认设置，则不需要配置，可直接使用 <code>yarn</code>，如果更改过 <code>npm</code> 的目录，则需要在环境变量中指定 <code>yarn</code> 的安装目录：</p>
+<ul>
+<li>新建系统变量： yarn_bin，变量值为：</li>
+<li>D:\develop\nodejs\npm-global\bin。<br>将 yarn_bin 加入 path的变量值中。<h2 id="yarn的更新"><a href="#yarn的更新" class="headerlink" title="yarn的更新"></a>yarn的更新</h2>用 <code>npm</code> 更新 <code>yarn</code> 版本：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install --global yarn</span><br></pre></td></tr></table></figure>
+<h2 id="yarn-的自定义路径配置"><a href="#yarn-的自定义路径配置" class="headerlink" title="yarn 的自定义路径配置"></a>yarn 的自定义路径配置</h2>查看 <code>yarn</code> 的全局执行路径：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn global bin</span><br></pre></td></tr></table></figure>
+修改 <code>yarn</code> 的全局执行路径：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn config set prefix d:\nodejs\.yarn</span><br></pre></td></tr></table></figure>
+修改 <code>yarn</code> 的全局脚本安装路径：</li>
+<li>第一步：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn config set global-folder d:\nodejs\.yarn\global</span><br></pre></td></tr></table></figure></li>
+<li>第二步：<br>找到用户目录下的 <code>.yarnrc</code> 文件，将找到文字 <code>global-folder</code> 修改为 <code>--global-folder</code></li>
+</ul>
+<hr>
+<p>关键点： 改为全局后，所有插件无法执行了,需要修改环境变量，在<code>path</code>变量中添加之前修改好的路径。如： <code>d:\nodejs\.yarn\bin</code></p>
+]]></content>
+      <tags>
+        <tag>yarn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker安装mysql</title>
+    <url>/2022/04/22/docker%E5%AE%89%E8%A3%85mysql/</url>
+    <content><![CDATA[<h1 id="docker中安装mysql"><a href="#docker中安装mysql" class="headerlink" title="docker中安装mysql"></a>docker中安装mysql</h1><p><strong>注：以本地目录&#x2F;home&#x2F;docker为根路径，可自行设置存放位置</strong></p>
+<h2 id="1-创建数据库配置"><a href="#1-创建数据库配置" class="headerlink" title="1. 创建数据库配置"></a>1. 创建数据库配置</h2><blockquote>
+<p>创建mysql相关目录(conf配置，data数据库，log日志)</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /home/docker/mysql/conf /home/docker/mysql/data /home/docker/mysql/log</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>创建配置文件my.cnf</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">touch my.cnf</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>创建日志文件</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">touch /home/docker/mysql/log/error.log</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>加入读写权限</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod 666 /home/docker/mysql/log/error.log</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="2-docker拉取并运行mysql镜像"><a href="#2-docker拉取并运行mysql镜像" class="headerlink" title="2. docker拉取并运行mysql镜像"></a>2. docker拉取并运行mysql镜像</h2><p><strong>注：2022-04-22时，拉取的镜像版本为mysql8.0.18</strong></p>
+<blockquote>
+<p>docker pull mysql:latest<br>查看本地是否拉取了镜像</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>根据第1节的内容运行容器</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-v /home/docker/mysql/conf/my.cnf:/etc/mysql/my.cnf -v /home/docker/mysql/data:/usr/mysql/data -v /home/docker/mysql/log:/var/log/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root@123 mysql</span><br></pre></td></tr></table></figure>
+<h2 id="3-进入docker中的mysql控制台"><a href="#3-进入docker中的mysql控制台" class="headerlink" title="3.进入docker中的mysql控制台"></a>3.进入docker中的mysql控制台</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker exec -it mysql /bin/bash</span><br></pre></td></tr></table></figure>
+<h3 id="4-修改mysql密码"><a href="#4-修改mysql密码" class="headerlink" title="4.修改mysql密码"></a>4.修改mysql密码</h3><blockquote>
+<p>修改root密码</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter user &#x27;root&#x27;@&#x27;localhost&#x27; identified by &#x27;root@abcd&#x27;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>添加用户”gly”并设置密码</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create user &#x27;gly&#x27;@&#x27;%&#x27; identified with mysql_native_password by &#x27;gly123456&#x27;;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>mysql</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux下的常用命令</title>
+    <url>/2022/04/22/linux%E4%B8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="linux下的常用命令"><a href="#linux下的常用命令" class="headerlink" title="linux下的常用命令"></a>linux下的常用命令</h1><ul>
+<li>docker命令<blockquote>
+<p>docker查看日志命令</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker logs --tail=100 -f abcService</span><br></pre></td></tr></table></figure>
+<p><code>tail=100</code>表示 输入最后的100行<br><code>-f</code>表示输出完不退出，如果有后续的日志继续输出<br><code>abcService</code>为服务名，根据实际服务指定</p>
+<span id="more"></span>
+<blockquote>
+<p>docker查看日志并指定关键字命令</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker logs --tail=100 -f abcService | grep &#x27;aaa&#x27;</span><br></pre></td></tr></table></figure>
+<p><code>aaa</code>为要查找的关键字</p>
+<blockquote>
+<p>docker查看日志并指定多个关键字条件</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker logs --tail=100 -f abcService | grep -i -E &#x27;abc|def&#x27; -n</span><br></pre></td></tr></table></figure>
+<p><code>-i或--ignore-case</code>: 忽略字符大小写的差别。<br><code>-E或--extended-regexp</code>：将样式为延伸的正则表达式来使用</p>
+<blockquote>
+<p>docker显示某个时间段的日志</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker logs --since=&#x27;2022-04-21T17:15:00&#x27; --until=&#x27;2022-04-21T17:30:00&#x27; abcService &gt;abcService-17-15_17-30.log </span><br></pre></td></tr></table></figure>
+<p><code>--since</code>指定开始时间<br><code>--until</code>显示结束时间<br><code>&gt;abcService.log</code>将结果输出到指定文件</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>docker</tag>
+        <tag>linux</tag>
+        <tag>grep</tag>
+        <tag>tail</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macos安装python3相关</title>
+    <url>/2022/04/22/macos%E5%AE%89%E8%A3%85python3%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<h1 id="macos安装python3相关"><a href="#macos安装python3相关" class="headerlink" title="macos安装python3相关"></a>macos安装python3相关</h1><h2 id="安装python3后pip3无法正常运行"><a href="#安装python3后pip3无法正常运行" class="headerlink" title="安装python3后pip3无法正常运行"></a>安装python3后pip3无法正常运行</h2><ul>
+<li>下载get-pip.py<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py</span><br></pre></td></tr></table></figure></li>
+<li>使用python执行下载的get-pip.py<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo python3 get-pip.py</span><br></pre></td></tr></table></figure>
+<strong>安装完后如果系统中有别的版本的pip映射如pip2，会覆盖为pip3</strong><span id="more"></span>
+3.执行<code>pip3 -v</code>验证是否能正常输出版本号<br>4.卸载pip3<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo pip3 uninstall pip</span><br></pre></td></tr></table></figure>
+<strong>不指定pip版本的话，会根据系统中的映射删除对应的pip</strong><br>5.升级pip<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip3 install -upgrade pip</span><br></pre></td></tr></table></figure>
+6.修改pip映射<br>把pip改为pip2<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /usr/local/bin/pip</span><br></pre></td></tr></table></figure>
+把第一行改为：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/System/Library/Frameworks/Python.framework/Versions/2.7/Resoures/Python.app/Contents/MacOS/Python</span><br></pre></td></tr></table></figure>
+pip改为pip3<br>把第一行改为：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/usr/local/opt/python/bin/python3.7</span><br></pre></td></tr></table></figure>
+<strong>注：根据安装的位置修改</strong></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>macos</tag>
+        <tag>python3</tag>
+        <tag>pip3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>nodejs,npm与Yarn的安装与配置</title>
+    <url>/2018/05/17/npm%E4%B8%8EYarn%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="nodejs的安装"><a href="#nodejs的安装" class="headerlink" title="nodejs的安装"></a>nodejs的安装</h2><p>nodejs的下载地址：<br><a href="https://nodejs.org/en/download/current/">https://nodejs.org/en/download/current/</a><br>可选择不同操作系统、不同版本的安装包或绿色压缩包。<br>安装包只是用默认值设置了环境变量的配置，后期自定义比较麻烦，所以在这里我选择绿色版。</p>
+<ul>
+<li>我的操作系统是 <code>win10x64</code> 专业版，在这里我选择64位，zip压缩包，解压缩包到你指定的位置，如 <code>d:\develop\nodejs</code> ，</li>
+<li>设置系统环境变量:<ul>
+<li>新建系统变量：变量名 <code>nodejs_home</code>，变量值为刚才指定的位置（如： <code>d:\develop\nodejs</code>）。</li>
+<li>将刚才新建的 <code>nodejs_home</code> 变量加入 <code>path</code> 变量中。</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="npm-的安装与配置"><a href="#npm-的安装与配置" class="headerlink" title="npm 的安装与配置"></a>npm 的安装与配置</h2><p><code>npm</code> 是 <code>node</code> 的包管理工具，在上面解压缩的 <code>nodejs</code> 目录中，已经存在 <code>npm</code> 了。在当前登录用户的用户目录中，新建一个文件： <code>.npmrc</code> 。文件内容为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">prefix = D:\develop\nodejs\npm-global</span><br><span class="line">cache = D:\develop\nodejs\npm-cache</span><br></pre></td></tr></table></figure>
+<p>或者用命令来修改：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix <span class="string">&quot;D:\develop\nodejs\npm-global&quot;</span></span><br><span class="line">npm config <span class="built_in">set</span> cache <span class="string">&quot;D:\develop\nodejs\npm-cache&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后将 <code>D:\develop\nodejs\npm-global</code> 目录加入 <code>path</code> 中(可以新建变量，然后将新建的变量名加入 <code>path</code> 变量中)。</p>
+<h2 id="yarn-的安装与配置"><a href="#yarn-的安装与配置" class="headerlink" title="yarn 的安装与配置"></a>yarn 的安装与配置</h2><p><code>yarn</code> 是一个 <code>nodejs</code> 的包管理工具，功能和 <code>npm</code> 差不多，主要推动者是 <code>Facebook</code> 公司。<br>安装yarn有多种方法，在这里，我使用 <code>npm</code> 来安装：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g yarn</span><br></pre></td></tr></table></figure>
+<p>如果 <code>npm</code> 使用的是默认设置，则不需要配置，可直接使用 <code>yarn</code>，如果更改过 <code>npm</code> 的目录，则需要在环境变量中指定 <code>yarn</code> 的安装目录：</p>
+<ul>
+<li>新建系统变量： <code>yarn_bin</code>，变量值为： <code>D:\develop\nodejs\npm-global\bin</code>。</li>
+<li>将 <code>yarn_bin</code> 加入 <code>path</code>的变量值中。</li>
+</ul>
+<p>用 <code>npm</code> 更新 <code>yarn</code> 版本：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install --global yarn</span><br></pre></td></tr></table></figure>
+
+<h2 id="yarn-与-npm-常用命令对比"><a href="#yarn-与-npm-常用命令对比" class="headerlink" title="yarn 与 npm 常用命令对比"></a>yarn 与 npm 常用命令对比</h2><table>
+<thead>
+<tr>
+<th align="left">npm</th>
+<th align="left">yarn</th>
+<th align="left">功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">npm install(npm i)</td>
+<td align="left">yarn install(yarn)</td>
+<td align="left">根据 <code>package.json</code> 安装所有依赖</td>
+</tr>
+<tr>
+<td align="left">npm i –save [包名]</td>
+<td align="left">yarn add [包名]</td>
+<td align="left">添加依赖包到 <code>dependencies</code> 节点</td>
+</tr>
+<tr>
+<td align="left">npm i –save-dev [包名]</td>
+<td align="left">yarn add [包名] –dev</td>
+<td align="left">添加依赖包到 <code>devDependencies</code> 节点</td>
+</tr>
+<tr>
+<td align="left">npm i -g [包名]</td>
+<td align="left">yarn global add [包名]</td>
+<td align="left">添加全局依赖包</td>
+</tr>
+<tr>
+<td align="left">npm update –save</td>
+<td align="left">yarn upgrade [包名]</td>
+<td align="left">升级依赖包</td>
+</tr>
+<tr>
+<td align="left">npm uninstall [包名]</td>
+<td align="left">yarn remove [包名]</td>
+<td align="left">移除依赖包</td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>yarn</tag>
+        <tag>nodejs</tag>
+        <tag>npm</tag>
+      </tags>
+  </entry>
+</search>
